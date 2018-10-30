@@ -79,13 +79,32 @@ class Tests {
         assertEquals(1, fib(1))
         assertEquals(1, fib(2))
         assertEquals(2, fib(3))
+        assertEquals(3, fib(4))
         assertEquals(5, fib(5))
+        assertEquals(8, fib(6))
         assertEquals(21, fib(8))
         assertEquals(102334155, fib(40))
         assertEquals(1134903170, fib(45))
         assertEquals(1836311903, fib(46))
         // Just to calculate it
         fib(50)
+    }
+
+    @Test
+    @Tag("Easy")
+    fun fib1() {
+        assertEquals(1, fib1(1))
+        assertEquals(1, fib1(2))
+        assertEquals(2, fib1(3))
+        assertEquals(3, fib1(4))
+        assertEquals(5, fib1(5))
+        assertEquals(8, fib1(6))
+        assertEquals(21, fib1(8))
+        assertEquals(102334155, fib1(40))
+        assertEquals(1134903170, fib1(45))
+        assertEquals(1836311903, fib1(46))
+        // Just to calculate it
+        fib1(50)
     }
 
     @Test
