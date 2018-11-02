@@ -1,6 +1,7 @@
 @file:Suppress("UNUSED_PARAMETER")
 package lesson3.task1
 
+import kotlin.math.min
 import kotlin.math.sqrt
 
 /**
@@ -120,7 +121,14 @@ fun maxDivisor(n: Int): Int = TODO()
  * Взаимно простые числа не имеют общих делителей, кроме 1.
  * Например, 25 и 49 взаимно простые, а 6 и 8 -- нет.
  */
-fun isCoPrime(m: Int, n: Int): Boolean = TODO()
+fun isCoPrime(m: Int, n: Int): Boolean {
+    for (del in 2..min(m,n)){
+        if (n%del==0) {
+            if (m%del==0) return false
+        }
+    }
+    return true
+}
 
 /**
  * Простая
