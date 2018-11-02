@@ -168,12 +168,12 @@ class Tests {
         for (n in 2..100) {
             if (isPrime(n)) {
                 count=0
-                for (m in 1..n*10){
+                for (m in 1..n*11){
                     if (isCoPrime(m,n)) {
                         count++
                     }
                 }
-                assertEquals(count,10*n-10)
+                assertEquals(count,11*n-11)
             }
         }
     }

@@ -123,9 +123,7 @@ fun maxDivisor(n: Int): Int = TODO()
  */
 fun isCoPrime(m: Int, n: Int): Boolean {
     for (del in 2..min(m,n)){
-        if (n%del==0) {
-            if (m%del==0) return false
-        }
+        if (n%del==0 && m%del==0) return false
     }
     return true
 }
