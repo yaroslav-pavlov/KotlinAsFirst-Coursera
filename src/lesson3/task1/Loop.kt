@@ -3,6 +3,7 @@ package lesson3.task1
 
 import kotlin.math.min
 import kotlin.math.sqrt
+import kotlin.text.Typography.degree
 
 /**
  * Пример
@@ -67,7 +68,11 @@ fun digitCountInNumber(n: Int, m: Int): Int =
  *
  * Использовать операции со строками в этой задаче запрещается.
  */
-fun digitNumber(n: Int): Int = TODO()
+fun digitNumber(n: Int): Int =
+        when {
+            n<10 -> 1
+            else -> digitNumber(n/10)+1
+        }
 
 /**
  * Простая
@@ -223,4 +228,27 @@ fun squareSequenceDigit(n: Int): Int = TODO()
  *
  * Использовать операции со строками в этой задаче запрещается.
  */
-fun fibSequenceDigit(n: Int): Int = TODO()
+fun fibSequenceDigit(n: Int): Int {
+    var length=1
+    var fibSec=1
+    var m=2
+    while (length<n){
+        var fib=fib1(m)
+        val digNum=digitNumber(fib)
+        if (length+digNum>=n) {
+            val pos=n-length
+            val deg=digNum-pos
+            for(i in 1..deg){
+                fib=fib/10
+            }
+            return fib%10
+        }
+        length+=digNum
+        for (i in 1..digNum) {
+            fibSec *= 10
+        }
+        fibSec+=fib
+        m++
+    }
+    return 1
+}
