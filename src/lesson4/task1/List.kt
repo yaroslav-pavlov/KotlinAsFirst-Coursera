@@ -122,7 +122,14 @@ fun abs(v: List<Double>): Double = sqrt(v.fold(0.0){acc,it->acc+it*it})
  *
  * Рассчитать среднее арифметическое элементов списка list. Вернуть 0.0, если список пуст
  */
-fun mean(list: List<Double>): Double = TODO()
+fun mean(list: List<Double>): Double {
+    val size=list.size
+    when (size) {
+        0-> return 0.0
+        else ->return list.fold(0.0){ acc, it->acc+it}/size
+    }
+
+}
 
 /**
  * Средняя
