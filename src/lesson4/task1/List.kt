@@ -3,6 +3,7 @@
 package lesson4.task1
 
 import lesson1.task1.discriminant
+import kotlin.math.pow
 import kotlin.math.sqrt
 
 /**
@@ -115,7 +116,7 @@ fun buildSumExample(list: List<Int>) = list.joinToString(separator = " + ", post
  * по формуле abs = sqrt(a1^2 + a2^2 + ... + aN^2).
  * Модуль пустого вектора считать равным 0.0.
  */
-fun abs(v: List<Double>): Double = sqrt(v.fold(0.0){acc,it->acc+it*it})
+fun abs(v: List<Double>): Double = sqrt(v.fold(0.0) { acc, it -> acc + it * it })
 
 /**
  * Простая
@@ -123,10 +124,10 @@ fun abs(v: List<Double>): Double = sqrt(v.fold(0.0){acc,it->acc+it*it})
  * Рассчитать среднее арифметическое элементов списка list. Вернуть 0.0, если список пуст
  */
 fun mean(list: List<Double>): Double {
-    val size=list.size
+    val size = list.size
     when (size) {
-        0-> return 0.0
-        else ->return list.fold(0.0){ acc, it->acc+it}/size
+        0 -> return 0.0
+        else -> return list.fold(0.0) { acc, it -> acc + it } / size
     }
 
 }
@@ -158,7 +159,10 @@ fun times(a: List<Double>, b: List<Double>): Double = TODO()
  * Коэффициенты многочлена заданы списком p: (p0, p1, p2, p3, ..., pN).
  * Значение пустого многочлена равно 0.0 при любом x.
  */
-fun polynom(p: List<Double>, x: Double): Double = TODO()
+fun polynom(p: List<Double>, x: Double): Double {
+    var i = -1
+    return p.fold(0.0) { acc, it -> i++;acc + it * x.pow(i) }
+}
 
 /**
  * Средняя
