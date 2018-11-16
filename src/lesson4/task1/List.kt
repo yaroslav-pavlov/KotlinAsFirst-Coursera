@@ -174,7 +174,13 @@ fun polynom(p: List<Double>, x: Double): Double {
  *
  * Обратите внимание, что данная функция должна изменять содержание списка list, а не его копии.
  */
-fun accumulate(list: MutableList<Double>): MutableList<Double> = TODO()
+fun accumulate(list: MutableList<Double>): MutableList<Double> {
+    var sum=0.0
+    val newList= list.map { sum += it;sum}
+    list.clear()
+    list.addAll(newList)
+    return list
+}
 
 /**
  * Средняя
