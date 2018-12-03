@@ -217,7 +217,11 @@ fun whoAreInBoth(a: List<String>, b: List<String>): List<String> = TODO()
  * Например:
  *   canBuildFrom(listOf('a', 'b', 'o'), "baobab") -> true
  */
-fun canBuildFrom(chars: List<Char>, word: String): Boolean = TODO()
+fun canBuildFrom(chars: List<Char>, word: String): Boolean {
+    val mutSet = mutableSetOf<Char>()
+    for (c in word) mutSet.add(c)
+    return chars.toSet().containsAll(mutSet)
+}
 
 /**
  * Средняя
